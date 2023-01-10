@@ -1,8 +1,9 @@
 # Comandos Knex.js
+- Os comandos utilizados são visando uma tabela de games que possui dois campos, nome e preco. 
 ## Insert
 - Inserir dados dentro de uma tabela.
 ```
-const user = await database.insert({nome: "Bruno Morais", email:"brunomoraisads@gmail.com"}).into("games")
+const game = await database.insert({nome: 'Sea of thieves', preco: 50.67}).into("games")
 ```
 ### Resposta da promise
 - Retorna o id que foi inserido dentro da tabela. isso também significa que foi inserido com sucesso.
@@ -36,7 +37,7 @@ const game = await database.select().where("id", 6).table("games")
 [ { id: 6, nome: 'Rainbow six - Siege', preco: 120.99 } ]
 ```
 ## Delete
-- Antes de excluir uma linha é necessario lozalizar a mesma, por esse motivo antes da função dele utilizamos um where, para localizar a linha que desejamos deletar.
+- Antes de excluir uma linha é necessario lozalizar a mesma, por esse motivo antes da função delete utilizamos um where, para localizar a linha que desejamos deletar.
 ```
 await database.where({id: 2}).delete().table("games")
 ```
